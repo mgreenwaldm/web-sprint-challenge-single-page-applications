@@ -6,7 +6,6 @@ import * as yup from "yup";
 const PizzaForm = () => {
 
     const [name, setName]= useState('');
-    const [errorMessage, setErrorMessage] = useState('');
     const [size, setSize]= useState('');
     const [topping1, setTopping1]= useState(false);
     const [topping2, setTopping2]= useState(false);
@@ -14,7 +13,7 @@ const PizzaForm = () => {
     const [topping4, setTopping4]= useState(false);
     const [special, setSpecial]= useState('');
     const [orders,setOrders] = useState([]);
-    
+    const [errorMessage, setErrorMessage] = useState('');
 
     const schema = yup.object().shape({
         name: yup.string().min(2)
@@ -66,11 +65,11 @@ const PizzaForm = () => {
                     <option value="Large">Large</option>
                     <option value="Extra Large">Extra Large</option>
                 </select></div>
-                <div>Pepperoni: <input type="checkbox" name="topping1" onChange={e => setTopping1(e.target.checked)} value={topping1} /></div>
+                <div>Pepperoni: <input id="topping1" type="checkbox" name="topping1" onChange={e => setTopping1(e.target.checked)} value={topping1} /></div>
 
-                <div>Mushroom: <input type="checkbox" name="topping2" onChange={e => setTopping2(e.target.checked)} value={topping2} /></div>
-                <div>Ham: <input type="checkbox" name="topping3" onChange={e => setTopping3(e.target.checked)} value={topping3} /></div>
-                <div>Pineapple: <input type="checkbox" name="topping4" onChange={e => setTopping4(e.target.checked)} value={topping4} /></div>
+                <div>Mushroom: <input id="topping2" type="checkbox" name="topping2" onChange={e => setTopping2(e.target.checked)} value={topping2} /></div>
+                <div>Ham: <input id="topping3" type="checkbox" name="topping3" onChange={e => setTopping3(e.target.checked)} value={topping3} /></div>
+                <div>Pineapple: <input id="topping4" type="checkbox" name="topping4" onChange={e => setTopping4(e.target.checked)} value={topping4} /></div>
                 <div>Special: <input id="special-text" type="text" name="special" onChange={e => setSpecial(e.target.value)} value={special} /></div>
 
 
